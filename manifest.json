@@ -1,0 +1,30 @@
+{
+    "name": "Vocabulary Builder Extension",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "description": "An extension to help English learners to build vocabulary",
+    "permissions": [
+        "contextMenus", "storage", "sidePanel"
+    ],
+    "side_panel": {
+        "default_path": "sidepanel.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "lib/jquery.min.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_title": "Vocabulary Builder",
+        "default_popup": "popup/popup.html"
+    },
+    "background": {
+        "service_worker": "lib/sample.js"
+    },
+    "minimum_chrome_version": "115"
+}
